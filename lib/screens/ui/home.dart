@@ -13,8 +13,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: const Text('Mininos'),
-          elevation: 0,
+          title:  const Center(
+            child: Text('toTyba')
+          ),
+          elevation: 10,
           // actions: [
           //   IconButton(
           //       icon: const Icon(Icons.search_outlined),

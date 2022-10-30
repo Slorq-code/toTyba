@@ -17,7 +17,7 @@ class SplashPageState extends State<SplashPage> {
     /*logica persistecia de datos*/
     super.initState();
         Timer(const Duration(seconds: 4), () {
-          Navigator.of(context).pushReplacementNamed('/home');
+          Navigator.of(context).pushReplacementNamed('/login');
         });
   }
 

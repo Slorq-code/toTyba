@@ -6,6 +6,7 @@ import 'package:tybaproject/screens/ui/splash.dart';
 
 import 'common/data/tratadata.dart';
 import 'screens/theme/theme.dart';
+import 'screens/ui/login.dart';
 
 
 
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
           routes: {
             '/': (context) => const SplashPage(),
             '/home': (context) => const HomeScreen(),
+            '/login': (context) => const LoginScreen(),
           }),
     );
   }
