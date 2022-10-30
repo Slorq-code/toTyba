@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         visualForm = !visualForm;
       });
-      print("pensando cambio a grid $visualForm");
+      print("Modo grid: $visualForm");
     }
 
     return Scaffold(

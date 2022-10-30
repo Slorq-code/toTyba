@@ -18,10 +18,10 @@ class DetailsScreen extends StatelessWidget {
         body: Column(children: [
           SizedBox(
               width: double.infinity,
-              height: size.height * 0.50,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
+                    _TarjetaImagen(info),
                     _TarjetaDescription(info),
                     const Divider(),
                   ],
@@ -43,6 +43,26 @@ class _TarjetaDescription extends StatelessWidget {
       child: Text(
         info.name,
         style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+      ),
+    );
+  }
+}
+
+class _TarjetaImagen extends StatelessWidget {
+  final Universidades info;
+
+  const _TarjetaImagen(this.info);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: const ClipRRect(
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(50), bottomRight: Radius.circular(50)),
+        child: Image(
+          image: AssetImage('assets/no-image.png'),
+        ),
       ),
     );
   }
