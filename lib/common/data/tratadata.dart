@@ -1,29 +1,24 @@
-// ignore_for_file: avoid_print, unused_element, prefer_interpolation_to_compose_strings, unnecessary_null_comparison
-
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: avoid_print, unused_element, prefer_interpolation_to_compose_strings, unnecessary_null_comparison, constant_identifier_names
 
 import 'modeldata.dart';
-import "package:flutter/services.dart" show rootBundle;
+import 'package:flutter/cupertino.dart';
+import 'package:http/http.dart' as http;
+
+const _URL_TYBA =
+    "https://tyba-assets.s3.amazonaws.com/FE-Engineer-test/universities.json";
 
 class ModelMenu with ChangeNotifier {
   List<Universidades> info = [];
   ModelMenu() {
-    loadData();
+    getInfo();
   }
-  void loadData() {
-    rootBundle.loadString("assets/data.json")
-    .then((value) => {
-      if(value==null) {
-        print("vacio")
-      } else {
-        value
-      }
-    });
+
+  getInfo() async {
+    // ignore: prefer_const_declarations
+    final resp = await http.get(Uri.parse(_URL_TYBA));
+    final infoResponse = universidadesFromJson(resp.body);
+    info.addAll(infoResponse);
+        notifyListeners();
+    return infoResponse;
   }
-  
-  final resp = loadData;
-  final infoResponse = universidadesFromJson
 }
-final informacion = ModelMenu();
-
-
