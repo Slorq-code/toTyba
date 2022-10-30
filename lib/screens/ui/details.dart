@@ -11,6 +11,7 @@ class DetailsScreen extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: const Color.fromRGBO(63, 63, 156, 1),
           title: Text("Your U is ${info.name}"),
           elevation: 0,
         ),

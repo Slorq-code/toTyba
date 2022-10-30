@@ -4,26 +4,32 @@ import '../ui/details.dart';
 
 
 
-class InfoPreview extends StatelessWidget {
+class InfoPreview extends StatefulWidget {
   final List<Universidades>? info;
   const InfoPreview(this.info, {super.key});
+
+  @override
+  State<InfoPreview> createState() => _InfoPreviewState();
+}
+
+class _InfoPreviewState extends State<InfoPreview> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: info?.length,
+      itemCount: widget.info?.length,
       itemBuilder: (BuildContext context, int index) {
-        return _GatitoCard(
-          info: info![index],
+        return _Card(
+          info: widget.info![index],
           index: index,
         );
       },
     );
   }
 }
-class _GatitoCard extends StatelessWidget {
+class _Card extends StatelessWidget {
   final Universidades info;
   final int index;
-  const _GatitoCard({required this.info, required this.index});
+  const _Card({required this.info, required this.index});
   @override
   Widget build(BuildContext context) {
     return MaterialButton(

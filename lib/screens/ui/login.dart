@@ -19,7 +19,7 @@ class LoginScreen extends StatelessWidget {
               child: Column(
             children: [
               const SizedBox(height: 10),
-              Text('Login', style: Theme.of(context).textTheme.headline4),
+              Text('toTyba', style: Theme.of(context).textTheme.headline4),
               const SizedBox(height: 30),
               ChangeNotifierProvider(
                   create: (_) => LoginFormProvider(), child: _LoginForm())
@@ -27,7 +27,11 @@ class LoginScreen extends StatelessWidget {
           )),
           const SizedBox(height: 50),
           const Text(
-            'Crear una nueva cuenta',
+            'No tengo restricciones para ti ;)',
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          const Text(
+            'Hablo del usuario y la contraseña.',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 50),
@@ -51,7 +55,7 @@ class _LoginForm extends StatelessWidget {
             autocorrect: false,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecorations.authInputDecoration(
-                hintText: 'john.doe@tyba.com',
+                hintText: 'reclutador@tyba.com',
                 labelText: 'Correo electrónico',
                 prefixIcon: Icons.alternate_email_rounded),
             onChanged: (value) => loginForm.email = value,
