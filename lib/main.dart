@@ -5,6 +5,7 @@ import 'package:tybaproject/screens/ui/home.dart';
 import 'package:tybaproject/screens/ui/splash.dart';
 
 import 'common/data/tratadata.dart';
+import 'screens/theme/theme.dart';
 
 
 
@@ -30,9 +31,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
           title: 'AppAndres',
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
+          theme: miTema,
           initialRoute: "/",
           routes: {
             '/': (context) => const SplashPage(),

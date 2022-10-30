@@ -37,6 +37,7 @@ class _GatitoCard extends StatelessWidget {
       },
       child: Column(
         children: <Widget>[
+          _TarjetaImagen(info),
           _TarjetaTitulo(info),
           const SizedBox(height: 10),
         ],
@@ -44,6 +45,28 @@ class _GatitoCard extends StatelessWidget {
     );
   }
 }
+
+class _TarjetaImagen extends StatelessWidget {
+  final Universidades info;
+
+  const _TarjetaImagen(this.info);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: const ClipRRect(
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(50), bottomRight: Radius.circular(50)),
+        child: Image(
+                image: AssetImage('assets/no-image.png'),
+              ),
+      ),
+    );
+  }
+}
+
+
 class _TarjetaTitulo extends StatelessWidget {
   final Universidades info;
 
@@ -53,8 +76,7 @@ class _TarjetaTitulo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Text(
-        "Breed: ${info.name}More...",
+      child: Text(info.name,
         style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
       ),
     );
