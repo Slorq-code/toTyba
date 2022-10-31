@@ -20,7 +20,8 @@ class _InfoPreviewgridState extends State<InfoPreviewgrid> {
           alignment: WrapAlignment.spaceBetween,
           direction: Axis.horizontal,
           children:
-              widget.info!.map((info) => _Card(info: info, index: 1)).toList()),
+              widget.info!.map((info) => _Card(info: info, index: 1)).toList()
+      ),
     );
   }
 }

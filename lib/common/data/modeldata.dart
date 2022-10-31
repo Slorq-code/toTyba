@@ -1,3 +1,4 @@
+
 import 'dart:convert';
 List<Universidades> universidadesFromJson(String str) => List<Universidades>.from(json.decode(str).map((x) => Universidades.fromJson(x)));
 String universidadesToJson(List<Universidades> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
@@ -22,4 +23,6 @@ class Universidades {
         "web_pages": List<dynamic>.from(webPages.map((x) => x)),
         "name": name,
     };
+
+  map(Function(dynamic info) param0) {}
 }
